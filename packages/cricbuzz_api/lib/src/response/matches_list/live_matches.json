@@ -1,0 +1,93 @@
+{
+    "typeMatches": [
+      {
+        "matchType": "League",
+        "seriesMatches": [
+          {
+            "seriesAdWrapper": {
+              "seriesId": 6829,
+              "seriesName": "Global T20 Canada 2023",
+              "matches": [
+                {
+                  "matchInfo": {
+                    "matchId": 77193,
+                    "seriesId": 6829,
+                    "seriesName": "Global T20 Canada 2023",
+                    "matchDesc": "19th Match",
+                    "matchFormat": "T20",
+                    "startDate": "1690918200000",
+                    "endDate": "1690930800000",
+                    "state": "Complete",
+                    "status": "Vancouver Knights won by 9 wkts",
+                    "team1": {
+                      "teamId": 451,
+                      "teamName": "Montreal Tigers",
+                      "teamSName": "MNT",
+                      "imageId": 172499
+                    },
+                    "team2": {
+                      "teamId": 453,
+                      "teamName": "Vancouver Knights",
+                      "teamSName": "VCK",
+                      "imageId": 172501
+                    },
+                    "venueInfo": {
+                      "id": 569,
+                      "ground": "CAA Centre",
+                      "city": "Brampton, Ontario",
+                      "timezone": "-04:00",
+                      "latitude": "43.482260",
+                      "longitude": "-79.387560"
+                    },
+                    "currBatTeamId": 453,
+                    "seriesStartDt": "1689811200000",
+                    "seriesEndDt": "1691452800000",
+                    "isTimeAnnounced": true,
+                    "stateTitle": "VCK Won"
+                  },
+                  "matchScore": {
+                    "team1Score": {
+                      "inngs1": {
+                        "inningsId": 1,
+                        "runs": 99,
+                        "wickets": 10,
+                        "overs": 18.3
+                      }
+                    },
+                    "team2Score": {
+                      "inngs1": {
+                        "inningsId": 2,
+                        "runs": 103,
+                        "wickets": 1,
+                        "overs": 14.5
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "adDetail": {
+              "name": "native_matches",
+              "layout": "native_large",
+              "position": 1
+            }
+          }
+        ]
+      }
+    ],
+    "filters": {
+      "matchType": [
+        "International",
+        "League",
+        "Domestic",
+        "Women"
+      ]
+    },
+    "appIndex": {
+      "seoTitle": "Live Cricket Score - Scorecard and Match Results",
+      "webURL": "www.cricbuzz.com/live-cricket-scores/"
+    },
+    "responseLastUpdated": "1690948448"
+  }
