@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:cb_ui/cb_theme.dart';
 
 import 'package:cricbuzz_clone/repository/models/model_barrel.dart';
 import 'package:cricbuzz_clone/ui/app_theme.dart';
 import 'package:cricbuzz_clone/ui/matches/pages/matches_page.dart';
+import 'package:cricbuzz_clone/ui/player_details/pages/player_details_page.dart';
 import 'package:cricbuzz_clone/ui/series_details/pages/series_details_page.dart';
+import 'package:cricbuzz_clone/ui/series_squad/pages/series_squad_page.dart';
 import 'package:cricbuzz_clone/utils/app_bloc_observer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -47,10 +50,39 @@ final goRouter = GoRouter(
                 GoRoute(
                   path: 'series-details',
                   builder: (BuildContext context, GoRouterState state) {
-                    print('Details navigation ${state.matchedLocation} ${state.path}');
                     return SeriesDetailsPage(series: state.extra as SeriesAdWrapper);
-                //    return SeriesDetailsPage(series: state.extra as SeriesAdWrapper);
-                  }
+                  },
+                  routes: [
+                    GoRoute(
+                      name: 'playersList',
+                      path: 'squads/players',
+                      builder: (context, state) {
+                        final extra = state.extra;
+                        if (extra is Map<String, dynamic>) {
+                          final seriesId = extra['seriesId'] as int ;
+                          final sqaudId = extra['squadId'] as int;
+                          final title = extra['squadType'] as String;
+                          return SeriesSquadPage(seriesId: seriesId, squadId: sqaudId, title: title);
+                        }
+                        return const Placeholder();
+                      },
+                      routes: [
+                        GoRoute(
+                          name: 'playerDetails',
+                          path: 'playerDetails',
+                          builder: (context, state) {
+                            final extra = state.extra;
+                            if (extra is Map<String, dynamic>) {
+                              final playerId = extra['playerId'] as String ;
+                              final playerName = extra['playerName'] as String ;
+                              return PlayerDetailsPage(playerId: playerId, playerName: playerName);
+                            }
+                            return const Placeholder();
+                          },
+                        )
+                      ]
+                    )
+                  ]
                 ),
               ]
             )
@@ -77,8 +109,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: goRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
+      theme: CBTheme.light
     );
   }
 }

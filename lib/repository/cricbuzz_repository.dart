@@ -2,7 +2,9 @@ import 'dart:typed_data';
 
 import 'package:cricbuzz_clone/repository/models/match_details_wrapper.dart';
 import 'package:cricbuzz_clone/repository/models/match_type.dart';
+import 'package:cricbuzz_clone/repository/models/player_info.dart';
 import 'package:cricbuzz_clone/repository/models/points_table.dart';
+import 'package:cricbuzz_clone/repository/models/series_players.dart';
 import 'package:cricbuzz_clone/repository/models/series_venue.dart';
 import 'package:cricbuzz_clone/repository/models/squads_wrapper.dart';
 import 'package:cricbuzz_clone/repository/models/stats_filters.dart';
@@ -57,4 +59,13 @@ class CricBuzzRepository {
   Future<SeriesVenue> getSeriesVenues({
     required int seriesId
   }) async => service.getSeriesVenues(seriesId: seriesId);
+
+  Future<SeriesPlayers> getSeriesPlayers({ 
+    required int seriesId, 
+    required int squadId 
+  }) async => service.getSeriesPlayers(seriesId: seriesId, squadId: squadId);
+
+  Future<PlayerInfo> getPlayerInfo({ 
+    required String playerId, 
+  }) async => service.getPlayerInfo(playerId: playerId);
 }

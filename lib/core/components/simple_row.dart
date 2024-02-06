@@ -18,7 +18,7 @@ class SimpleRow extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(title),
-                const Icon(Icons.arrow_forward_ios, size: 18)
+                const Icon(Icons.arrow_forward_ios, size: 15)
               ]
             ),
           ),

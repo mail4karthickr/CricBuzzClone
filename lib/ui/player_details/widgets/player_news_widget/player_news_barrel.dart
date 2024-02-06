@@ -1,0 +1,1 @@
+export 'bloc/player_news_bloc.dart';

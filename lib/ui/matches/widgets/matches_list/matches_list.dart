@@ -1,9 +1,9 @@
+import 'package:cricbuzz_clone/core/api_status.dart';
 import 'package:cricbuzz_clone/repository/models/matches_list.dart';
 import 'package:cricbuzz_clone/ui/matches/pages/bloc/matches_layout_bloc.dart';
 import 'package:cricbuzz_clone/ui/matches/widgets/matches_categories/matches_categories.dart';
 import 'package:cricbuzz_clone/ui/matches/widgets/matches_list/bloc/matches_list_bloc.dart';
 import 'package:cricbuzz_clone/ui/matches/widgets/matches_list/series_list.dart';
-import 'package:cricbuzz_clone/ui/series_details/pages/series_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

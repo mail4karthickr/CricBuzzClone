@@ -8,7 +8,7 @@ class DioFactory {
       connectTimeout: const Duration(seconds: 5),
       receiveTimeout: const Duration(seconds: 5),
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "2fe6426376mshba6ba3c234ef5e8p122e39jsn331868a1557d",
         "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com"
       }
     );

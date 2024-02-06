@@ -4,10 +4,8 @@ class AppTheme {
   static ThemeData get light {
     return ThemeData(
       useMaterial3: true,
-      appBarTheme: const AppBarTheme(
-        color: Color.fromRGBO(8, 171, 126, 1)
-      ),
-      colorScheme: ColorScheme.fromSwatch(),
+      colorScheme: lightColorScheme,
+      appBarTheme: appBarTheme,
       snackBarTheme: const SnackBarThemeData(),
       chipTheme: const ChipThemeData(
         selectedColor: Color.fromRGBO(8, 171, 126, 1),
@@ -30,6 +28,19 @@ class AppTheme {
         selectedColor: Colors.green,
         backgroundColor: Colors.white
       )
+    );
+  }
+
+  static ColorScheme get lightColorScheme {
+    return ColorScheme.fromSeed(
+      brightness: Brightness.light,
+      seedColor: const Color.fromRGBO(8, 171, 126, 1)
+    );
+  }
+
+  static AppBarTheme get appBarTheme {
+    return AppBarTheme(
+      color: lightColorScheme.primary
     );
   }
 }

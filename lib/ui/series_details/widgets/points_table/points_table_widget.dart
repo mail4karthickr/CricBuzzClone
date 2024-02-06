@@ -5,6 +5,7 @@ import 'package:cricbuzz_clone/repository/models/points_table.dart';
 import 'package:cricbuzz_clone/ui/series_details/widgets/points_table/bloc/points_table_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:cricbuzz_clone/core/components/progress_indicator.dart' as core;
 
 class PointsTableWidget extends StatelessWidget {
   const PointsTableWidget({super.key});

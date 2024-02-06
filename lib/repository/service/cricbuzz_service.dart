@@ -4,8 +4,10 @@ import 'package:cricbuzz_clone/repository/cricbuzz_repository.dart';
 import 'package:cricbuzz_clone/repository/models/match_details_wrapper.dart';
 import 'package:cricbuzz_clone/repository/models/match_type.dart';
 import 'package:cricbuzz_clone/repository/models/matches_list.dart';
+import 'package:cricbuzz_clone/repository/models/player_info.dart';
 import 'package:cricbuzz_clone/repository/models/points_table.dart';
 import 'package:cricbuzz_clone/repository/models/result_error.dart';
+import 'package:cricbuzz_clone/repository/models/series_players.dart';
 import 'package:cricbuzz_clone/repository/models/series_venue.dart';
 import 'package:cricbuzz_clone/repository/models/squads_wrapper.dart';
 import 'package:cricbuzz_clone/repository/models/stats_filters.dart';
@@ -150,6 +152,38 @@ class CricBuzzService {
     if (response.statusCode == 200) {
       try {
         return SeriesVenue.fromJson(response.data);
+      } catch(e) {
+        throw ErrorGettingMatchesList('Error getting matches List');
+      }
+    } else {
+      throw ErrorGettingMatchesList('Error getting matches List');
+    }
+  }
+
+   Future<SeriesPlayers> getSeriesPlayers({required int seriesId, required int squadId}) async {
+    final response = await _dio.get('/series/v1/$seriesId/squads/$squadId');
+    if (response.statusCode == 200 && response.data.isEmpty) {
+      throw DataIsEmpty();
+    }
+    if (response.statusCode == 200) {
+      try {
+        return SeriesPlayers.fromJson(response.data);
+      } catch(e) {
+        throw ErrorGettingMatchesList('Error getting matches List');
+      }
+    } else {
+      throw ErrorGettingMatchesList('Error getting matches List');
+    }
+  }
+
+  Future<PlayerInfo> getPlayerInfo({required String playerId}) async {
+    final response = await _dio.get('/stats/v1/player/$playerId');
+    if (response.statusCode == 200 && response.data.isEmpty) {
+      throw DataIsEmpty();
+    }
+    if (response.statusCode == 200) {
+      try {
+        return PlayerInfo.fromJson(response.data);
       } catch(e) {
         throw ErrorGettingMatchesList('Error getting matches List');
       }
